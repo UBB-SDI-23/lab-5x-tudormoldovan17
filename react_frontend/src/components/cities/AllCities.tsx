@@ -11,7 +11,7 @@ export const CitiesShowAll = () => {
     }, []);
 
     if (cities.length === 0) {
-        return <div>No cities</div>;
+        return <div>Cities failed to fetch.</div>;
     }
 
     return (
