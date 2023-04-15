@@ -12,6 +12,7 @@ export const CitiesShowAll = () => {
         <div className="App">
             <h1>Cities list</h1>
             <table>
+                <tbody>
                 <tr>
                     <th>#</th>
                     <th>City name</th>
@@ -20,6 +21,7 @@ export const CitiesShowAll = () => {
                     <th>City money</th>
                     <th>City description</th>
                 </tr>
+                </tbody>
                 {cities.map((city: City, index) => (
                     <tr>
                         <td>{index}</td>
