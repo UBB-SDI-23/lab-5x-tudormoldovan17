@@ -28,7 +28,7 @@ urlpatterns = [
     # country average money is calculated as arithmetic mean of all the visited countries' money of the tourist
     # example http://127.0.0.1:8000/api/tourists/by-avg-money
     # tourist2 visited 2 countries and (avg_money = c1money+c2money) / 2
-    path('tourists/by-avg-money', views.TouristsByAvgMoney.as_view(), name='tourists-by-avg-money'),
+    path('tourists/by-avg-money/', views.TouristsByAvgMoney.as_view(), name='tourists-by-avg-money'),
 
     # TRY 1
     # lab3 extra feature working
@@ -37,13 +37,13 @@ urlpatterns = [
     # city -> country
     # we have 4 citizens which leave in city 8 (Barcelona) which is part of country 1 and country 2
     # avg population = (c1 pop + c2 pop / 2)
-    path('citizens/by-avg-population', views.CitizensByAvgPopulation.as_view(), name='citizens-by-avg-population'),
+    path('citizens/by-avg-population/', views.CitizensByAvgPopulation.as_view(), name='citizens-by-avg-population'),
 
     # LAB4 bulk add
     path('city/<int:pk>/citizens/', views.CitizenCityView.as_view()),
 
     # LAB5 cities by average citizens' age
-    path('cities/by-avg-age', views.CitiesByAvgAge.as_view(), name='cities-by-avg-age')
+    path('cities/by-avg-age/', views.CitiesByAvgAge.as_view(), name='cities-by-avg-age')
 ]
 
 # not needed
