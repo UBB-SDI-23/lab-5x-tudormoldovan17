@@ -75,7 +75,7 @@ export const AllCities = () => {
                 </IconButton>
             )}
             {!loading && (
-                <Button type={"submit"} component={Link} sx={{mr : 3}} to={'by-avg-age'}>Check this statistical report by avg-age</Button>
+                <Button type={"submit"} component={Link} sx={{mr : 3}} to={'by-avg-age/'}>Check this statistical report by avg-age</Button>
             )}
             <Button onClick={handleSortByAdmin}>Sort by Name</Button>
             {!loading && cities.length > 0 && (

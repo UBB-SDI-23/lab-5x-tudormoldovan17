@@ -32,7 +32,7 @@ export const AppMenu = () => {
                         color="inherit"
                         sx={{ mr: 5 }}
                         startIcon={<LocalLibraryIcon />}>
-                        Teams
+                        Cities
                     </Button>
                 </Toolbar>
             </AppBar>

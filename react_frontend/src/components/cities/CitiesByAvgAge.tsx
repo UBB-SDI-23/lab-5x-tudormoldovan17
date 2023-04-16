@@ -7,9 +7,7 @@ import {
     TableCell,
     TableBody,
     CircularProgress,
-    Container,
-    IconButton,
-    Tooltip, Button
+    Container
 } from "@mui/material";
 
 
@@ -27,7 +25,7 @@ export const CitiesByAvgAge = () => {
 
 
     useEffect(() => {
-        const url = `${BACKEND_API_URL}/cities/by-avg-age`;
+        const url = `${BACKEND_API_URL}/cities/by-avg-age/`;
         const axiosCity = async () => {
             setLoading(true);
             await axios.get<CityWithAvgAge[]>(url)
