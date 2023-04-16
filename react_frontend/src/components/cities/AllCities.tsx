@@ -24,7 +24,7 @@ import {City} from "../../models/City";
 import {BACKEND_API_URL} from "../../constants";
 
 
-export const AllTeams = () => {
+export const AllCities = () => {
     const [loading, setLoading] = useState(false);
     const [cities, setCities] = useState<City[]>([])
     const etc = `${BACKEND_API_URL}/cities`;
@@ -75,55 +75,53 @@ export const AllTeams = () => {
                 </IconButton>
             )}
             {!loading && (
-                <Button type={"submit"} component={Link} sx={{mr : 3}} to={'by-avg-wage'}>Check this statistical report by avg-wage</Button>
+                <Button type={"submit"} component={Link} sx={{mr : 3}} to={'by-avg-age'}>Check this statistical report by avg-age</Button>
             )}
-            <Button onClick={handleSortByAdmin}>Sort by Admin</Button>
-            {!loading && teams.length > 0 && (
+            <Button onClick={handleSortByAdmin}>Sort by Name</Button>
+            {!loading && cities.length > 0 && (
                 <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 650 }}  aria-label="simple table">
                         <TableHead>
                             <TableRow>
                                 <TableCell>#</TableCell>
                                 <TableCell align="left">Name</TableCell>
-                                <TableCell align="left">Created</TableCell>
-                                <TableCell align="right">Free places</TableCell>
-                                <TableCell align="right">Purpose</TableCell>
-                                <TableCell align="right">Admin</TableCell>
-                                <TableCell align="right">Rating</TableCell>
-                                <TableCell align="center">Operations</TableCell>
+                                <TableCell align="left">Population</TableCell>
+                                <TableCell align="right">Area</TableCell>
+                                <TableCell align="right">Money</TableCell>
+                                <TableCell align="right">Description</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {teams.map((team, index) => (
-                                <TableRow key={team.id}>
+                            {cities.map((city, index) => (
+                                <TableRow key={city.id}>
                                     <TableCell component="th" scope="row">
                                         {index+1}
                                     </TableCell>
                                     <TableCell component="th" scope="row">
-                                        <Link to={`/teams/${team.id}/details`} title={"View team details"}>
-                                            {team.nameOfTeam}
+                                        <Link to={`/cities/${city.id}/details`} title={"View city details"}>
+                                            {city.cityName}
                                         </Link>
                                     </TableCell>
-                                    <TableCell align="right">{team.created?.toString()}</TableCell>
-                                    <TableCell align="right">{team.freePlaces}</TableCell>
-                                    <TableCell align="right">{team.purpose}</TableCell>
-                                    <TableCell align="right">{team.admin}</TableCell>
-                                    <TableCell align="right">{team.rating}</TableCell>
+                                    <TableCell align="right">{city.cityName}</TableCell>
+                                    <TableCell align="right">{city.cityPopulation}</TableCell>
+                                    <TableCell align="right">{city.cityArea}</TableCell>
+                                    <TableCell align="right">{city.cityMoney}</TableCell>
+                                    <TableCell align="right">{city.cityDescription}</TableCell>
                                     <TableCell align="right">
                                         <IconButton
                                             component={Link}
                                             sx={{mr : 3}}
-                                            to={`/teams/${team.id}/details`}>
-                                            <Tooltip title="View team details" arrow>
+                                            to={`/cities/${city.id}/details`}>
+                                            <Tooltip title="View city details" arrow>
                                                 <ReadMoreIcon color="primary"/>
                                             </Tooltip>
                                         </IconButton>
 
-                                        <IconButton component={Link} sx={{mr : 3}} to={`/teams/${team.id}/edit`}>
+                                        <IconButton component={Link} sx={{mr : 3}} to={`/cities/${city.id}/edit`}>
                                             <EditIcon/>
                                         </IconButton>
 
-                                        <IconButton component={Link} sx={{mr : 3}} to={`/teams/${team.id}/delete`}>
+                                        <IconButton component={Link} sx={{mr : 3}} to={`/cities/${city.id}/delete`}>
                                             <DeleteForeverIcon sx={{color : "red"}}/>
                                         </IconButton>
                                     </TableCell>
