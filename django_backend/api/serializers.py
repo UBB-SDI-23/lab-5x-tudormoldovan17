@@ -148,6 +148,16 @@ class CitiesByAvgMoneySerializer(serializers.ModelSerializer):
         model = City
         fields = ('id', 'cityName', 'cityPopulation', 'cityArea', 'cityMoney', 'cityDescription', 'avgMoney')
 
+class CitiesByAvgAgeSerializer(serializers.ModelSerializer):
+    avg_citizenAge = serializers.FloatField()
+
+    class Meta:
+        model = City
+        fields = ('id', 'cityName', 'cityPopulation', 'cityArea', 'cityMoney', 'cityDescription', 'avg_citizenAge')
+
+    def get_avg_citizenAge(self, obj):
+        avg_agee = obj.cityCitizen.aggregate(Avg('citizenAge'))['citizenAge__avg']
+        return avg_agee if avg_agee else 0
 
 class TouristsByAvgMoneySerialize(serializers.ModelSerializer):
     avg_countryMoney = serializers.SerializerMethodField()

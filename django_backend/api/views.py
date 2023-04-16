@@ -6,7 +6,7 @@ from rest_framework.views import APIView
 from django.forms.models import model_to_dict
 
 from .models import City, Tourist, Country, Citizen
-from .serializers import CitizenSerializer, CitySerializer, CountrySerializer, DynamicCitizenSerializer, DynamicCitySerializer, TouristSerializer, TouristCitySerializer, CitiesByAvgMoneySerializer, TouristsByAvgMoneySerialize, CountrySerializer2, CitiesByAvgPopulationSerializer, CitizensByAvgPopulationSerializer, CityCitizenSerializer
+from .serializers import CitizenSerializer, CitySerializer, CountrySerializer, DynamicCitizenSerializer, DynamicCitySerializer, TouristSerializer, TouristCitySerializer, CitiesByAvgMoneySerializer, TouristsByAvgMoneySerialize, CountrySerializer2, CitiesByAvgPopulationSerializer, CitizensByAvgPopulationSerializer, CityCitizenSerializer, CitiesByAvgAgeSerializer
 
 
 class CityList(generics.ListCreateAPIView):
@@ -112,6 +112,13 @@ class CitiesByAvgMoney(APIView):
     def get(self, request):
         queryset = City.objects.annotate(avg_cityMoney=Avg('cityCitizen__citizenMoney')).order_by('-avg_citizenMoney')
         serializer = CitiesByAvgMoneySerializer(queryset, many=True)
+        return Response(serializer.data)
+
+
+class CitiesByAvgAge(APIView):
+    def get(self, request):
+        queryset = City.objects.annotate(avg_citizenAge=Avg('cityCitizen__citizenAge')).order_by('-avg_citizenAge')
+        serializer = CitiesByAvgAgeSerializer(queryset, many=True)
         return Response(serializer.data)
 
 

@@ -40,8 +40,10 @@ urlpatterns = [
     path('citizens/by-avg-population', views.CitizensByAvgPopulation.as_view(), name='citizens-by-avg-population'),
 
     # LAB4 bulk add
-    path('city/<int:pk>/citizens/', views.CitizenCityView.as_view())
+    path('city/<int:pk>/citizens/', views.CitizenCityView.as_view()),
 
+    # LAB5 cities by average citizens' age
+    path('cities/by-avg-age', views.CitiesByAvgAge.as_view(), name='cities-by-avg-age')
 ]
 
 # not needed
