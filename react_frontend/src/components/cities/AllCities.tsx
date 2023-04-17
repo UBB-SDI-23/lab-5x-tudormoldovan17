@@ -27,12 +27,12 @@ import {BACKEND_API_URL} from "../../constants";
 export const AllCities = () => {
     const [loading, setLoading] = useState(false);
     const [cities, setCities] = useState<City[]>([])
-    const etc = `${BACKEND_API_URL}/cities`;
+    const etc = `${BACKEND_API_URL}/cities/`;
     console.log(etc);
     useEffect(() => {
         setLoading(true);
         try{
-            fetch(`${BACKEND_API_URL}/cities`)
+            fetch(`${BACKEND_API_URL}/cities/`)
                 .then((response) => response.json())
                 .then((data) => {
                     setCities(data);
