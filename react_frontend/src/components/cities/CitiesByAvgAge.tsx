@@ -17,7 +17,7 @@ import {BACKEND_API_URL} from "../../constants";
 import axios from "axios";
 
 interface CityWithAvgAge extends City {
-    avg_age: number;
+    avg_citizenAge: number;
 }
 export const CitiesByAvgAge = () => {
     const [loading, setLoading] = useState(false);
@@ -46,7 +46,7 @@ export const CitiesByAvgAge = () => {
             <h1>Cities by average age of citizens</h1>
 
             {loading && <CircularProgress />}
-            {!loading && data.length === 0 && <p>No teams found</p>}
+            {!loading && data.length === 0 && <p>No cities found</p>}
             {!loading && data.length > 0 && (
                 <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 650 }}  aria-label="simple table">
@@ -72,7 +72,7 @@ export const CitiesByAvgAge = () => {
                                     <TableCell align="center">{city.cityArea}</TableCell>
                                     <TableCell align="center">{city.cityMoney}</TableCell>
                                     <TableCell align="center">{city.cityDescription}</TableCell>
-                                    <TableCell align="center">{city?.avg_age}</TableCell>
+                                    <TableCell align="center">{city.avg_citizenAge}</TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
