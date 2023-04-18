@@ -93,11 +93,11 @@ WSGI_APPLICATION = 'FirstTryLab1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mydb',
-        'USER': 'postgres',
+        'NAME': 'mydbb',
+        'USER': 'tudor',
         'PASSWORD': '987667543',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'HOST': 'postgresql-122053-0.cloudclusters.net',
+        'PORT': '14019',
     }
 }
 
