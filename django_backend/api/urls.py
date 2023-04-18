@@ -1,23 +1,22 @@
 from django.urls import path
-from rest_framework.urlpatterns import format_suffix_patterns
-from api import views
+from api.views import CityViews, CitizenViews, TouristViews, CountryViews, views
 
 urlpatterns = [
     # lab 1
-    path('citizens/', views.CitizenList.as_view()),
-    path('citizens/<int:pk>/', views.CitizenDetail.as_view()),
+    path('citizens/', CitizenViews.CitizenList.as_view()),
+    path('citizens/<int:pk>/', CitizenViews.CitizenDetail.as_view()),
 
-    path('cities/', views.CityList.as_view()),
-    path('cities/<int:pk>/', views.CityDetail.as_view()),
+    path('cities/', CityViews.CityList.as_view()),
+    path('cities/<int:pk>/', CityViews.CityDetailView.as_view()),
 
-    path('countries/', views.CountryList.as_view()),
-    path('countries/<int:pk>/', views.CountryDetail.as_view()),
+    path('countries/', CountryViews.CountryList.as_view()),
+    path('countries/<int:pk>/', CountryViews.CountryDetail.as_view()),
 
-    path('tourists/', views.TouristList.as_view()),
-    path('tourists/<int:pk>/', views.TouristDetail.as_view()),
+    path('tourists/', TouristViews.TouristList.as_view()),
+    path('tourists/<int:pk>/', TouristViews.TouristDetailView.as_view()),
 
     # lab2 filter citizens by wage min working
-    path('citizens-filter-by-wage/<int:wage>/', views.MinimumWage.as_view()),
+    path('citizens-filter-by-wage/<int:wage>/', CitizenViews.MinimumWage.as_view()),
     # lab2 extra features working
     # example 1 http://127.0.0.1:8000/api/cities/
     # example 2 http://127.0.0.1:8000/api/cities/8/
