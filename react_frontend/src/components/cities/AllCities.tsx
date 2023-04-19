@@ -102,7 +102,6 @@ export const AllCities = () => {
                                             {city.cityName}
                                         </Link>
                                     </TableCell>
-                                    <TableCell align="right">{city.cityName}</TableCell>
                                     <TableCell align="right">{city.cityPopulation}</TableCell>
                                     <TableCell align="right">{city.cityArea}</TableCell>
                                     <TableCell align="right">{city.cityMoney}</TableCell>
