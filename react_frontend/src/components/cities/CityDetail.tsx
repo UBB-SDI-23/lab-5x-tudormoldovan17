@@ -80,11 +80,11 @@ export const CityDetail = () => {
                                 <p className={classes.p}>Money : {country?.countryMoney}</p>
                                 <p className={classes.p}>Description : {country?.countryDescription}</p>
                                 <li>Tourist details</li>
-                                <p className={classes.p}>Name : {country?.countryTourist.touristName}</p>
-                                <p className={classes.p}>Age : {country?.countryTourist.touristAge}</p>
-                                <p className={classes.p}>Money : {country?.countryTourist.touristMoney}</p>
-                                <p className={classes.p}>Phone : {country?.countryTourist.touristPhone}</p>
-                                <p className={classes.p}>Email : {country?.countryTourist.touristEmail}</p>
+                                <p className={classes.p}>Name : {country?.countryTourist?.touristName}</p>
+                                <p className={classes.p}>Age : {country?.countryTourist?.touristAge}</p>
+                                <p className={classes.p}>Money : {country?.countryTourist?.touristMoney}</p>
+                                <p className={classes.p}>Phone : {country?.countryTourist?.touristPhone}</p>
+                                <p className={classes.p}>Email : {country?.countryTourist?.touristEmail}</p>
                                 <hr/>
                             </CardContent>
                         ))}
