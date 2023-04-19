@@ -89,6 +89,19 @@ export const CityDetail = () => {
                             </CardContent>
                         ))}
                     </ul>
+                    <ul>
+                        {city?.cityCountry?.map((country, index) => (
+                            <CardContent key={country.countryTourist.id}>
+                                <li>Tourist details</li>
+                                <p className={classes.p}>Name : {country?.countryTourist?.touristName}</p>
+                                <p className={classes.p}>Age : {country?.countryTourist?.touristAge}</p>
+                                <p className={classes.p}>Money : {country?.countryTourist?.touristMoney}</p>
+                                <p className={classes.p}>Phone : {country?.countryTourist?.touristPhone}</p>
+                                <p className={classes.p}>Email : {country?.countryTourist?.touristEmail}</p>
+                                <hr/>
+                            </CardContent>
+                        ))}
+                    </ul>
                     <p>City members:</p>
                     <ul>
                         {city?.cityCitizen?.map((citizen, index) => (
