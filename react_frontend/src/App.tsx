@@ -9,6 +9,7 @@ import {CityAdd} from "./components/cities/CityAdd";
 import {CityEdit} from "./components/cities/CityEdit";
 import {CitiesByAvgAge} from "./components/cities/CitiesByAvgAge";
 import {AllTourists} from "./components/tourists/AllTourists";
+import {AllCitizens} from "./components/citizens/AllCitizens";
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                     <Route path="/cities/by-avg-age/" element={<CitiesByAvgAge />}/>
 
                     <Route path="/tourists" element={<AllTourists />} />
+                    <Route path="/citizens" element={<AllCitizens />} />
                 </Routes>
             </Router>
         </React.Fragment>
