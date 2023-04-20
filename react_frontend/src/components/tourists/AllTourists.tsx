@@ -24,7 +24,7 @@ import {Tourist} from "../../models/Tourist";
 import {BACKEND_API_URL} from "../../constants";
 
 
-export const AllCities = () => {
+export const AllTourists = () => {
     const [loading, setLoading] = useState(false);
     const [tourists, setTourists] = useState<Tourist[]>([])
     const etc = `${BACKEND_API_URL}/tourists/`;

@@ -1,12 +1,4 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { useState } from "react";
-import CssBaseline from "@mui/material/CssBaseline";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import * as React from "react";
-import { AppBar, Toolbar, IconButton, Typography, Button } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AppHome } from "./components/AppHome";
 import { AppMenu } from "./components/AppMenu";
@@ -16,6 +8,7 @@ import {CityDelete} from "./components/cities/CityDelete";
 import {CityAdd} from "./components/cities/CityAdd";
 import {CityEdit} from "./components/cities/CityEdit";
 import {CitiesByAvgAge} from "./components/cities/CitiesByAvgAge";
+import {AllTourists} from "./components/tourists/AllTourists";
 
 function App() {
     return (
@@ -30,6 +23,8 @@ function App() {
                     <Route path="/cities/:cityId/delete" element={<CityDelete />} />
                     <Route path="/cities/add" element={<CityAdd />} />
                     <Route path="/cities/by-avg-age/" element={<CitiesByAvgAge />}/>
+
+                    <Route path="/tourists" element={<AllTourists />} />
                 </Routes>
             </Router>
         </React.Fragment>
