@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from api.models import City
+from api.paginations import LargeResultsSetPagination
 from api.serializers import CitySerializer, DynamicCitySerializer, CitiesByAvgMoneySerializer, CitiesByAvgAgeSerializer, \
     CitiesByAvgPopulationSerializer, CityDetailSerializer
 
@@ -12,6 +13,7 @@ from api.serializers import CitySerializer, DynamicCitySerializer, CitiesByAvgMo
 class CityList(generics.ListCreateAPIView):
     queryset = City.objects.all()
     serializer_class = CitySerializer
+    pagination_class = LargeResultsSetPagination
 
 
 class CityDetailView(generics.RetrieveUpdateDestroyAPIView):
