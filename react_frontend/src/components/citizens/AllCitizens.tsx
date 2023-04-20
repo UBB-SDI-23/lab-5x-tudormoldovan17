@@ -9,7 +9,7 @@ import {
     CircularProgress,
     Container,
     IconButton,
-    Tooltip, Button, Pagination
+    Tooltip, Button
 } from "@mui/material";
 
 import { Link } from "react-router-dom";
@@ -93,7 +93,7 @@ export const AllCitizens = () => {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            <Pagination count={100} variant="outlined" />
+
                             {citizens.map((citizen, index) => (
                                 <TableRow key={citizen.id}>
                                     <TableCell component="th" scope="row">
@@ -132,9 +132,7 @@ export const AllCitizens = () => {
                         </TableBody>
                     </Table>
                 </TableContainer>
-
             )}
         </Container>
-
     );
 };
