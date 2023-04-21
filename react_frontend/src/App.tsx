@@ -19,7 +19,7 @@ function App() {
                 <AppMenu />
                 <Routes>
                     <Route path="/" element={<AppHome />} />
-                    <Route path="/cities/?page=2" element={<AllCities />} />
+                    <Route path="/cities" element={<AllCities />} />
                     <Route path="/cities/:cityId/details" element={<CityDetail />} />
                     <Route path="/cities/:cityId/edit" element={<CityEdit />} />
                     <Route path="/cities/:cityId/delete" element={<CityDelete />} />
