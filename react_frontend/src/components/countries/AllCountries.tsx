@@ -23,7 +23,7 @@ import {Country} from "../../models/Country";
 import {BACKEND_API_URL} from "../../constants";
 
 
-export const AllCitizens = () => {
+export const AllCountries = () => {
     const [loading, setLoading] = useState(false);
     const [countries, setCountries] = useState<Country[]>([])
     const etc = `${BACKEND_API_URL}/countries/`;
@@ -149,3 +149,4 @@ export const AllCitizens = () => {
         </Container>
     );
 };
+
