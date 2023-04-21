@@ -32,7 +32,7 @@ export const AllCities = () => {
     useEffect(() => {
         setLoading(true);
         try{
-            fetch(`${BACKEND_API_URL}/cities/`)
+            fetch(`${BACKEND_API_URL}/cities/?page=2`)
                 .then((response) => response.json())
                 .then((data) => {
                     setCities(data);
