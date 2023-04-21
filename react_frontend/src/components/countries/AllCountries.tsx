@@ -9,7 +9,7 @@ import {
     CircularProgress,
     Container,
     IconButton,
-    Tooltip, Button, TablePagination
+    Tooltip, Button,
 } from "@mui/material";
 
 import { Link } from "react-router-dom";
@@ -60,12 +60,6 @@ export const AllCountries = () => {
 
     const [pg, setpg] = React.useState(0);
     const [rpg, setrpg] = React.useState(5);
-    setpg(0);
-    setrpg(100);
-
-    function handleChangePage() {
-        setpg(pg + 1);
-    }
 
     return (
         <Container sx={{maxWidth:"xl", padding: '4em'}}>
@@ -136,14 +130,6 @@ export const AllCountries = () => {
                             ))}
                         </TableBody>
                     </Table>
-                    <TablePagination
-                        rowsPerPageOptions={[100]}
-                        component="div"
-                        count={countries.length}
-                        rowsPerPage={rpg}
-                        page={pg}
-                        onPageChange={handleChangePage}
-                    />
                 </TableContainer>
             )}
         </Container>
