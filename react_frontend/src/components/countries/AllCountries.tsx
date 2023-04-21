@@ -143,6 +143,9 @@ export const AllCountries = () => {
 // Pagination.pagination(items: any[], currentPage: number = 1, pageSize: number = 20) 
     const paginationPage2 = Pagination.pagination(drones, 2, 5)
 
+    return (
+      paginationPage1
+    );
     console.log(paginationPage1)
     /*
     {
