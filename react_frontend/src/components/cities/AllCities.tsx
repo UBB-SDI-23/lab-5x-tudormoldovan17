@@ -59,6 +59,8 @@ export const AllCities = () => {
         setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
     };
 
+    const [pg, setpg] = React.useState(0);
+    const [rpg, setrpg] = React.useState(100);
 
     return (
         <Container sx={{maxWidth:"xl", padding: '4em'}}>
@@ -92,7 +94,7 @@ export const AllCities = () => {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {cities.map((city, index) => (
+                            {cities.slice(pg * rpg, pg * rpg + rpg).map((city, index) => (
                                 <TableRow key={city.id}>
                                     <TableCell component="th" scope="row">
                                         {index+1}
