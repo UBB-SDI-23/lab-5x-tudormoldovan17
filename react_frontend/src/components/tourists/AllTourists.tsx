@@ -33,10 +33,8 @@ export const AllTourists = () => {
         setLoading(true);
         try{
             fetch(`${BACKEND_API_URL}/tourists/`, {
-                method: "GET",
                 headers: {
-                    "access-control-allow-origin" : "*",
-                    "Content-type": "application/json; charset=UTF-8"
+                    "access-control-allow-origin" : "*"
                 }
             })
                 .then((response) => response.json())
