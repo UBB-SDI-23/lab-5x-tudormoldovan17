@@ -32,11 +32,7 @@ export const AllTourists = () => {
     useEffect(() => {
         setLoading(true);
         try{
-            fetch(`${BACKEND_API_URL}/tourists/`, {
-                headers: {
-                    "access-control-allow-origin" : "*"
-                }
-            })
+            fetch(`${BACKEND_API_URL}/tourists/`)
                 .then((response) => response.json())
                 .then((data) => {
                     setTourists(data);
