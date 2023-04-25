@@ -53,7 +53,19 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+"https://tudormoldovan17.com",
+"https://main--mpp-lab5x-tudormoldovan.netlify.app",
+"http://localhost:8080",
+"http://localhost:8000",
+"http://localhost:80",
+"http://127.0.0.1:8000",
+"http://127.0.0.1:80",
+"http://0.0.0.0:8000",
+"http://0.0.0.0:80",
+"http://34.154.19.229:80",
+"http://34.154.19.229:8000"
+]
 
 ROOT_URLCONF = 'MPPLabs.urls'
 
