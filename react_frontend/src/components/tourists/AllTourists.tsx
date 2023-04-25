@@ -32,7 +32,7 @@ export const AllTourists = () => {
     useEffect(() => {
         setLoading(true);
         try{
-            fetch(`${BACKEND_API_URL}/tourists/`, {mode: 'no-cors'})
+            fetch(`${BACKEND_API_URL}/tourists/`)
                 .then((response) => response.json())
                 .then((data) => {
                     setTourists(data);
